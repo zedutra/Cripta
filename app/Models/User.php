@@ -49,7 +49,7 @@ class User extends Authenticatable
             }
         });
 
-        return $query; // Retorne a consulta para permitir o encadeamento
+        return $query;
     }
 
     public function admin()

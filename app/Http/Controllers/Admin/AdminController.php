@@ -35,7 +35,7 @@ class AdminController extends Controller
                 ];
             });
 
-        return Inertia::render('Admin/Index', [
+        return Inertia::render('Dashboard/Admin/Index', [
             'filters' => $filters,
             'admins' => $admins,
         ]);
@@ -46,7 +46,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Admin/Create');
+        return Inertia::render('Dashboard/Admin/Create');
     }
 
     /**
@@ -87,7 +87,7 @@ class AdminController extends Controller
     public function edit($id)
     {
         $admin = User::withTrashed()->where('id', $id)->first();
-        return Inertia::render('Admin/Edit', [
+        return Inertia::render('Dashboard/Admin/Edit', [
             'admin' => [
                 'id' => $admin->id,
                 'name' => $admin->name,

@@ -19,8 +19,7 @@
               </template>
             </dropdown>
           </div>
-          <div class="md:text-md flex items-center justify-between p-4 w-full text-sm bg-white border-b md:px-12 md:py-0">
-            <div class="mr-4 mt-1">{{ auth.user.name }}</div>
+          <div class="md:text-md flex items-center justify-end p-4 w-full text-sm bg-white border-b md:px-12 md:py-0">
             <dropdown class="mt-1" placement="bottom-end">
               <template #default>
                 <div class="group flex items-center cursor-pointer select-none">
@@ -32,7 +31,7 @@
               </template>
               <template #dropdown>
                 <div class="mt-2 py-2 text-sm bg-white rounded shadow-xl">
-                  <Link class="block px-6 py-2 w-full text-left hover:text-white hover:bg-indigo-500" href="/logout" method="delete" as="button">Logout</Link>
+                  <Link class="block px-6 py-2 w-full text-left hover:text-white hover:bg-indigo-500" href="/logout" method="delete" as="button">Sair</Link>
                 </div>
               </template>
             </dropdown>

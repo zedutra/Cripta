@@ -34,7 +34,7 @@ class UserController extends Controller
                 ];
             });
 
-        return Inertia::render('Users/Index', [
+        return Inertia::render('Dashboard/Users/Index', [
             'filters' => $filters,
             'users' => $users,
         ]);
@@ -45,7 +45,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Users/Create');
+        return Inertia::render('Dashboard/Users/Create');
     }
 
     /**
@@ -83,7 +83,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::withTrashed()->where('id', $id)->first();
-        return Inertia::render('Users/Edit', [
+        return Inertia::render('Dashboard/Users/Edit', [
             'user' => [
                 'id' => $user->id,
                 'name' => $user->name,
