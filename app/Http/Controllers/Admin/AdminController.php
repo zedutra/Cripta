@@ -29,6 +29,7 @@ class AdminController extends Controller
             ->through(function ($admin) {
                 return [
                     'id' => $admin->id,
+                    'user' => $admin->user,
                     'name' => $admin->name,
                     'email' => $admin->email,
                     'deleted_at' => $admin->deleted_at,
