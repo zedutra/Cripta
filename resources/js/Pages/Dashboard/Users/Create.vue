@@ -3,8 +3,8 @@
 
     <Head title="Cadastrar Usuário" />
     <h1 class="mb-8 text-3xl font-bold">
-      <Link class="text-indigo-400 hover:text-indigo-600" :href="route('painel.user.index')">User</Link>
-      <span class="text-indigo-400 font-medium">/</span> Cadastrar
+      <Link class="text-slate-400 hover:text-slate-600" :href="route('painel.user.index')">User</Link>
+      <span class="text-slate-400 font-medium">/</span> Cadastrar
     </h1>
     <div class="max-w-3xl bg-white rounded-md shadow overflow-hidden">
       <form @submit.prevent="store">
@@ -15,7 +15,7 @@
           <text-input v-model="form.password_confirmation" :error="form.errors.password_confirmation" class="pb-8 pr-6 w-full" type="password" label="Confirmar Senha" />
         </div>
         <div class="flex items-center justify-end px-8 py-4 bg-gray-50 border-t border-gray-100">
-          <loading-button :loading="form.processing" class="btn-indigo" type="submit">Registrar</loading-button>
+          <loading-button :loading="form.processing" class="btn-slate" type="submit">Registrar</loading-button>
         </div>
       </form>
     </div>

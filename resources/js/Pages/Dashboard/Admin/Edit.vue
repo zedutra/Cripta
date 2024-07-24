@@ -3,8 +3,8 @@
     <Head :title="`${form.name}`" />
     <div class="flex justify-start mb-8 max-w-3xl">
       <h1 class="text-3xl font-bold">
-        <Link class="text-indigo-400 hover:text-indigo-600" :href="route('painel.admin.index')">Admin</Link>
-        <span class="text-indigo-400 font-medium">/</span>
+        <Link class="text-slate-400 hover:text-slate-600" :href="route('painel.admin.index')">Admin</Link>
+        <span class="text-slate-400 font-medium">/</span>
         {{ form.name }}
       </h1>
     </div>
@@ -19,7 +19,7 @@
         </div>
         <div class="flex items-center px-8 py-4 bg-gray-50 border-t border-gray-100">
           <button v-if="!admin.deleted_at" class="text-red-600 hover:underline" tabindex="-1" type="button" @click="destroy">Excluir</button>
-          <loading-button :loading="form.processing" class="btn-indigo ml-auto" type="submit">Atualizar</loading-button>
+          <loading-button :loading="form.processing" class="btn-slate ml-auto" type="submit">Atualizar</loading-button>
         </div>
       </form>
     </div>

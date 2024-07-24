@@ -11,7 +11,7 @@
           <option value="only">apenas Excluídos</option>
         </select>
       </search-filter>
-      <Link class="btn-indigo" :href="route('painel.user.create')">
+      <Link class="btn-slate" :href="route('painel.user.create')">
         <span>Adicionar</span>
         <span class="hidden md:inline">&nbsp;Usuário</span>
       </Link>
@@ -27,9 +27,9 @@
         <tbody>
           <tr v-for="user in users.data" :key="user.id" class="hover:bg-gray-100 focus-within:bg-gray-100">
             <td class="border-t">
-              <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="route('painel.user.edit', { id: user.id })">
+              <Link class="flex items-center px-6 py-4 focus:text-slate-500" :href="route('painel.user.edit', { id: user.id })">
                 {{ user.name }}
-                <Icon v-if="user.deleted_at" name="trash-outline" class="shrink-0 ml-2 w-3 h-3 fill-gray-400" />
+                <Icon v-if="user.deleted_at" icon="mdi:delete" class="shrink-0 ml-2 w-3 h-3 fill-gray-400" />
               </Link>
             </td>
             <td class="border-t">
@@ -39,7 +39,7 @@
             </td>
             <td class="w-px border-t">
               <Link class="flex items-center px-4" :href="route('painel.user.edit', { id: user.id })" tabindex="-1">
-                <Icon name="chevron-forward-outline" class="block w-6 h-6 fill-gray-400" />
+                <Icon icon="mdi:chevron-right" class="block w-6 h-6 fill-gray-400" />
               </Link>
             </td>
           </tr>
@@ -55,7 +55,6 @@
 
 <script>
 import { Head, Link } from '@inertiajs/vue3'
-import Icon from '@/Shared/Icon.vue'
 import pickBy from 'lodash/pickBy'
 import Layout from '@/Shared/Layout.vue'
 import throttle from 'lodash/throttle'
@@ -66,7 +65,6 @@ import SearchFilter from '@/Shared/SearchFilter.vue'
 export default {
   components: {
     Head,
-    Icon,
     Link,
     Pagination,
     SearchFilter,
