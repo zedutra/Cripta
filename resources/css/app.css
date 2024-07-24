@@ -3,5 +3,6 @@
 @import 'tailwindcss/components';
 @import 'buttons';
 @import 'form';
+@import 'fonts';
 
 @import 'tailwindcss/utilities';
