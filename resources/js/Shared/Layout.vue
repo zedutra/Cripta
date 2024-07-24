@@ -4,9 +4,10 @@
     <div class="md:flex md:flex-col">
       <div class="md:flex md:flex-col md:h-screen">
         <div class="md:flex md:shrink-0">
-          <div class="flex items-center justify-between px-6 py-4 bg-slate-900 md:shrink-0 md:justify-left md:w-56">
-            <Link class="mt-1" href="/">
-              <h1 class="text-left shadows-into-light-regular text-white text-2xl">CRIPTA</h1>
+          <div class="flex items-center justify-center px-6 py-4 bg-slate-900 md:shrink-0 md:w-56">
+            <Link class="mt-1 flex text-white text-2xl items-center" href="/">
+              <h1 class="shadows-into-light-regular">CRIPTA</h1>
+              <Icon icon="game-icons:william-tell-skull" size="large" class="ml-2"/>
             </Link>
             <dropdown class="md:hidden" placement="bottom-end">
               <template #default>
