@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
+use Hash;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -27,9 +28,16 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
+    
+        $user = Auth::user();
+    
+        if (Hash::needsRehash($user->password)) {
+            $user->password = Hash::make($request->password);
+            $user->save();
+        }
+    
         $request->session()->regenerate();
-
+    
         return redirect()->intended(route('painel.home'));
     }
 
@@ -39,6 +47,9 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
         Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
         return redirect('/login');
     }
