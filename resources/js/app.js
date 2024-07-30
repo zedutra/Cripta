@@ -3,6 +3,7 @@ import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { Icon } from '@iconify/vue';
+import { VueFinalModal } from 'vue-final-modal'
 
 createInertiaApp({
   resolve: name => {
@@ -15,6 +16,7 @@ createInertiaApp({
       .use(plugin)
       .use(ZiggyVue)
       .component('Icon', Icon)
+      .component('VueFinalModal', VueFinalModal)
       .mount(el)
   },
 })

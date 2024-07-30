@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
     
         $request->session()->regenerate();
     
-        return redirect()->intended(route('painel.home'));
+        return redirect()->intended(route('welcome'));
     }
 
     /**

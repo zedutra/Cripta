@@ -19,6 +19,10 @@ Route::get('register', [App\Http\Controllers\UserController::class, 'create'])
 Route::post('register', [App\Http\Controllers\UserController::class, 'store'])
     ->name('register.store');
 
+// Site
+Route::get('welcome', [App\Http\Controllers\SiteController::class, 'welcome'])
+    ->name('welcome');
+
 // Painel Admininstrativo
 Route::name('painel.')->prefix('painel')->middleware(['auth', 'can:admin'])->group(function () {
     // Painel
